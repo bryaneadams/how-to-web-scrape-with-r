@@ -1,7 +1,7 @@
 # Introduction to Web Scraping Data with R
 This is a tutorial on how to scrape data from a webpage for Introduction to Probability and Statistics students.  It covers how to scrape data from one of the recommended scoures.  This is not the only method to collect the data, but provides instruction for one method.
 
-#Getting Started
+# Getting Started
 
 First we will need to download a tool to help with identifying the data you would like to scrap of the web.  If you know how to read HTML code well you will not need this program, but it still can make things easier.  One such program is called Selector Gadget and is found at the following link:  https://selectorgadget.com/ 
 
@@ -33,7 +33,7 @@ library(stringr)
 
 For this tutorial we will be taking nfl data from espn.com.  Using the following link: http://www.espn.com/nfl/statistics/team/_/stat/total/
 
-#Scraping the Data from One Page
+# Scraping the Data from One Page
 
 To start we will read data from one page of the website.  In the past you would have highlighted the table and pasted it into Excel.  This works for one page and a nicely formatted table, but what if you wanted to do it for 10 or 100 pages.  R will make it much easier.
 
@@ -60,7 +60,7 @@ Inside of the SelectorGadget tool you will see td.  This is a reference to the H
 
 When the data is read from the webpage it comes a single string.  ```html_nodes()``` reads the data, ```html_text()``` converts the information to a string, and ``` matrix()``` breaks the string into a table.  n = 10 because that is the number of columns for each table.  No two strings are ever the same.  With practice you will get better at determining how to break the strings into usable tables.  Maybe one day someone will create the ```give_me_data_the_way_I_want_it()``` command.
 
-#Reading Data from Multiple Pages
+# Reading Data from Multiple Pages
 
 Next we will read multiple years of statistics.  The method for a single page would work, but you would have to keep changing the url.  First, we look out how the url changes when we select another year. It goes from http://www.espn.com/nfl/statistics/team/_/stat/total/ to http://www.espn.com/nfl/statistics/team/_/stat/total/year/2016.  This is a pretty simple change, we only need to add "year/2016" to the orginal url.  Luckily it also keeps the same format for the other years. Now we will create a list of urls for the years we want.
 
